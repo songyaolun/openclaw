@@ -110,6 +110,8 @@ const GroupSessionScopeSchema = z
  * Topic session isolation mode for group chats.
  * - "disabled" (default): All messages in a group share one session
  * - "enabled": Messages in different topics get separate sessions
+ *
+ * Topic routing prefers `thread_id` when provided by Feishu, with `root_id` as fallback.
  */
 const TopicSessionModeSchema = z.enum(["disabled", "enabled"]).optional();
 const ReactionNotificationModeSchema = z.enum(["off", "own", "all"]).optional();
